@@ -75,7 +75,7 @@ body.my-login-page {
     height: 180px;
     left: 50%;
     transform: translateX(-50%);
-    top: -8%;
+    top: -15%;
 }
 .my-login-page .imgbox img{
     left: 0;
