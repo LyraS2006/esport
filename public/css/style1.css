@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+  background-image: linear-gradient(to bottom right, #4A55A2 , #A0BFE0, #7895CB);
+  font-family: 'PT Sans', sans-serif;
+}
+
+h2{
+  padding-top: 1.5rem;
+}
+a{
+  color: #333;
+}
+a:hover{
+  color: #da5767;
+  text-decoration: none;
+}
+
+.card-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logo img{
+  width: 150px;
+}
+.logo p{
+  margin-left: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+
+.form-control{
+  background-color: #f8f9fa;
+  padding: 20px;
+  padding: 15px 15px;
+  margin-bottom: 1.3rem;
+  cursor: pointer;
+}
+.form-option{
+    margin-bottom: 1.3rem;
+}
+
+.form-control:focus {
+    color: #ffffff;
+    background-color: #4800ff;
+    border: 3px solid #4800ff;
+    outline: 0;
+    box-shadow: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn{
+  padding: 0.4rem 1.2rem;
+  background: #4800ff;
+  border: 2px solid #4800ff;
+}
+.btn-primary:hover {
+    background-color: #8b71ff;
+    border-color: #8b71ff;
+  transition: .3s;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(#0000 calc(1*100%/6),#384653 0 calc(3*100%/6),#0000 0),
+            linear-gradient(#0000 calc(2*100%/6), #4800ff 0 calc(4*100%/6),#0000 0),
+            linear-gradient(#0000 calc(3*100%/6),#9300d2 0 calc(5*100%/6),#0000 0);
+  background-size: 10px 400%;
+  background-repeat: no-repeat;
+  animation: matrix 1s infinite linear;
+}
+
+@keyframes matrix {
+  0% {
+    background-position: 0% 100%, 50% 100%, 100% 100%
+  }
+
+  100% {
+    background-position: 0% 0%, 50% 0%, 100% 0%
+  }
+}
