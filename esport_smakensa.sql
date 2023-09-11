@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Agu 2023 pada 16.15
+-- Waktu pembuatan: 11 Sep 2023 pada 09.47
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -36,71 +36,6 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `jenis_kelamin`
---
-
-CREATE TABLE `jenis_kelamin` (
-  `id` int(11) NOT NULL,
-  `jenis_kelamin` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `jenis_kelamin`
---
-
-INSERT INTO `jenis_kelamin` (`id`, `jenis_kelamin`) VALUES
-(1, 'laki-laki'),
-(2, 'perempuan\r\n');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `jurusan`
---
-
-CREATE TABLE `jurusan` (
-  `id` int(11) NOT NULL,
-  `nama_jurusan` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `jurusan`
---
-
-INSERT INTO `jurusan` (`id`, `nama_jurusan`) VALUES
-(1, 'bisnis digital'),
-(2, 'management perkantoran'),
-(3, 'akuntansi'),
-(4, 'layanan perbangkan'),
-(5, 'rekayasa perangkat lunak'),
-(6, 'desain komunikasi visual'),
-(7, 'Teknik komputer dan jaringan'),
-(8, 'produksi dan program televisi'),
-(9, 'produksi film\r\n');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `kelas`
---
-
-CREATE TABLE `kelas` (
-  `id` int(11) NOT NULL,
-  `kelas` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `kelas`
---
-
-INSERT INTO `kelas` (`id`, `kelas`) VALUES
-(1, 'X'),
-(2, 'XI'),
-(3, 'XII\r\n');
 
 -- --------------------------------------------------------
 
@@ -158,33 +93,6 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `register`
---
-
-CREATE TABLE `register` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(100) DEFAULT NULL,
-  `nisn` int(11) DEFAULT NULL,
-  `jurusan` varchar(100) DEFAULT NULL,
-  `kelas` varchar(11) DEFAULT NULL,
-  `jenis_kelamin` enum('lakilaki','perempuan') DEFAULT NULL,
-  `game` varchar(100) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `register`
---
-
-INSERT INTO `register` (`id`, `nama`, `nisn`, `jurusan`, `kelas`, `jenis_kelamin`, `game`, `password`) VALUES
-(55, 'Arif Hidayatullah', 12312311, 'mm-1', 'X', 'lakilaki', 'pubg', 'iqbalroni'),
-(56, 'kaka', 7987987, 'mm-1', '12', 'lakilaki', 'ml', '$2y$10$O2zyjfbDNnLJwKXPa2Wk.ugBS2TGe9Ur1QisPH2wQkL/ETqzLHwW2'),
-(57, 'dsaasd', 1233213, 'ak-1', '10', 'lakilaki', 'ff', '$2y$10$0p7FBTefHHTxHIk.opv1n.VLigYx9ydnqjKGowrmwXfmimbWZG5oS'),
-(58, 'kaka asik', 98213, 'mm-1', '12', 'lakilaki', 'ml', '$2y$10$wA/M9F4O/SQZw2d2i7hpre0CZkPTK3MSIJ/HBlcfhAlziw2TM/PJ.');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `registers`
 --
 
@@ -198,6 +106,14 @@ CREATE TABLE `registers` (
   `game` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `registers`
+--
+
+INSERT INTO `registers` (`id`, `nama`, `nisn`, `jurusan`, `kelas`, `jenis_kelamin`, `game`, `password`) VALUES
+(1, 'alex', '546654', '5', '3', '1', 'pubg', '$2y$10$082/WQ6jkfAqznZDCLc2hOdZrPPCmrWwESMDXsFK9pYOXbAELCa2i'),
+(2, 'a', '2313131', '3', '3', '1', 'pubg', '$2y$10$rmcl13oOF7sgdFVbbPFnmu5NqYnUkSrFJ4/nMLoc2G7HV4ga2isZi');
 
 -- --------------------------------------------------------
 
@@ -248,12 +164,6 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indeks untuk tabel `register`
---
-ALTER TABLE `register`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indeks untuk tabel `registers`
 --
 ALTER TABLE `registers`
@@ -289,16 +199,10 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `register`
---
-ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
---
 -- AUTO_INCREMENT untuk tabel `registers`
 --
 ALTER TABLE `registers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
