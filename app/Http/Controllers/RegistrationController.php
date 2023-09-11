@@ -31,7 +31,7 @@ class RegistrationController extends Controller
         }
 
         // Insert data into the database
-        DB::table('register')->insert([
+        DB::table('registers')->insert([
             'nama' => $request->nama,
             'nisn' => $request->nisn,
             'jurusan' => $request->jurusan,
@@ -41,6 +41,7 @@ class RegistrationController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('/register')->with('success', 'Registration successful');
+        // return redirect('/register')->with('success', 'Registration successful');
+        return redirect('/')->with('success', 'Registration successful');
     }
 }

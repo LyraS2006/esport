@@ -1,12 +1,10 @@
-<!-- resources/views/layouts/app.blade.php -->
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Esport</title>
+    <title>Login Esport</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Registration Esport</title>
+	<title>Login Esport</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,6 +18,7 @@
 
 		body {
     background-image: linear-gradient(to bottom right, #212A3E, #394867 , rgb(122, 0, 170));
+    height:100vh;
 }
 
 body.my-login-page {
@@ -75,7 +74,7 @@ body.my-login-page {
     height: 180px;
     left: 50%;
     transform: translateX(-50%);
-    top: -15%;
+    top: -25%;
 }
 .my-login-page .imgbox img{
     left: 0;
@@ -161,7 +160,10 @@ input[type='radio']:checked:after {
 }
 
 .footer {
-	margin: 40px 0;
+	position: absolute;
+    bottom:32px;
+    left: 50%;
+    transform: translateX(-50%);
 	color: white;
 	text-align: center;
     text-shadow: 2px 0px 7px white;
@@ -188,11 +190,11 @@ input[type='radio']:checked:after {
 
 @keyframes animate{
     0%,20%{
-        width: 0%;
+        width:0%;
     }
     70%{
-        width: 70%;
-    }
+        width:10%;
+    }
 }
 	</style>
 </head>
