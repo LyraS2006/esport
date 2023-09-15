@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,7 +16,6 @@ class RegistrationController extends Controller
 
     public function register(Request $request)
     {
-        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'nama' => 'required',
             'nisn' => 'required',
@@ -30,18 +30,18 @@ class RegistrationController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // Insert data into the database
-        DB::table('registers')->insert([
-            'nama' => $request->nama,
-            'nisn' => $request->nisn,
-            'jurusan' => $request->jurusan,
-            'kelas' => $request->kelas,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'game' => $request->game,
-            'password' => Hash::make($request->password),
-        ]);
+        DB::table("users")
+            ->insert([
+                'nama' => $request->nama,
+                'nisn' => $request->nisn,
+                'jurusan' => $request->jurusan,
+                'kelas' => $request->kelas,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'game' => $request->game,
+                'password' => Hash::make($request->password),
+            ]);
 
-        // return redirect('/register')->with('success', 'Registration successful');
-        return redirect('/')->with('success', 'Registration successful');
+        // Insert data into the database
+        return redirect("/login")->with("success", 'Registration successful');
     }
 }
